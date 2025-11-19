@@ -1,16 +1,15 @@
-name: CI
+name: CI - Test de Base
 
 on:
   push:
-    branches: [ "main" ]
+    branches: [ main ]
   pull_request:
-    branches: [ "main" ]
+    branches: [ main ]
 
 jobs:
-  build:
+  hello:
     runs-on: ubuntu-latest
 
     steps:
-      - uses: actions/checkout@v3
-      - name: Run a script
-        run: echo "CI running"
+      - name: Afficher un message
+        run: echo "CI fonctionne !"
