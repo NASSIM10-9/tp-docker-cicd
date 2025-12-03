@@ -26,6 +26,10 @@ app.use(cors({
   allowedHeaders: ["Content-Type"]       // Headers autorisés
 }));
 
+app.get("/",(req,res)=>{
+res.send("API is running");
+});
+
 // ROUTE API PRINCIPALE
 app.get("/api", (req, res) => {
   res.json({
