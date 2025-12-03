@@ -7,11 +7,12 @@ const PORT = process.env.PORT || 3000; // Port configurable
 
 // Database connection configuration
 const pool = new Pool({
-  host: process.env.DB_HOST || "db",
-  port: process.env.DB_PORT || 5432,
-  user: process.env.DB_USER || "admin",
-  password: process.env.DB_PASSWORD || "secret",
-  database: process.env.DB_NAME || "mydb",
+  // Utiliser les variables standard de Render pour l'hôte, l'utilisateur, etc.
+  host: process.env.POSTGRES_HOST || process.env.DB_HOST || "db",
+  port: process.env.POSTGRES_PORT || process.env.DB_PORT || 5432,
+  user: process.env.POSTGRES_USER || process.env.DB_USER || "admin",
+  password: process.env.POSTGRES_PASSWORD || process.env.DB_PASSWORD || "secret",
+  database: process.env.POSTGRES_DB || process.env.DB_NAME || "mydb",
 });
 
 // MIDDLEWARE CORS : Autorise les requêtes cross-origin
